@@ -1,0 +1,10 @@
+name: SimpleChatUtils
+version: 0.5
+description: A simple chat util plugin.
+author: Sean McKenna
+main: net.comcast.seanmckenna.SimpleChatUtils.SimpleChatUtils
+api-version: 1.16
+commands:
+  r:
+    description: reply to last private message
+    usage: /r <message>

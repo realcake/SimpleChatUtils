@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SimpleChatUtils:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SimpleChatUtils_jar</output-path>
+    <root id="archive" name="SimpleChatUtils.jar">
+      <element id="module-output" name="SimpleChatUtils" />
+    </root>
+  </artifact>
+</component>
