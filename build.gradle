@@ -1,0 +1,13 @@
+apply plugin: 'java'
+
+version = '1.0.0'
+
+repositories {
+    maven {
+        url 'https://hub.spigotmc.org/nexus/content/groups/public/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.16.4-R0.1-SNAPSHOT'
+}
