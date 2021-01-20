@@ -29,7 +29,7 @@ public class ChatListener implements Listener {
 
         List<Player> mentionedPlayers = new ArrayList<>();
         for(Player player : players){
-            if(message.contains(player.getDisplayName().toLowerCase())){
+            if(message.contains(player.getDisplayName().toLowerCase()) || checkAliases(player, message)){
                 mentionedPlayers.add(player);
             }
         }
@@ -39,5 +39,19 @@ public class ChatListener implements Listener {
             player.sendMessage(ChatColor.LIGHT_PURPLE + "<"+sender.getDisplayName()+"> " + event.getMessage());
             player.playNote(player.getLocation(), Instrument.CHIME, Note.sharp(0,Note.Tone.A));
         }
+    }
+
+    private boolean checkAliases(Player player, String message){
+        ArrayList<String> aliases = simpleChatUtils.aliasMap.get(player.getUniqueId());
+
+        if(aliases == null)
+            return false;
+
+        for(String alias : aliases){
+            if(message.contains(alias))
+                return true;
+        }
+
+        return false;
     }
 }
